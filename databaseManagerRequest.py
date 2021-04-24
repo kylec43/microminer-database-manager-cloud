@@ -17,13 +17,10 @@ def databaseManagerRequest(requestType, request):
 		if requestType == Constants.REQUEST_TYPE_UPLOAD:
 
 			originalUrlKeywords = request.args.get(Constants.GET_ARG_ORIGINAL_URL_KEYWORDS)
-			originalUrlKeywords = originalUrlKeywords.text
 
 			kwicUrlKeywords = request.args.get(Constants.GET_ARG_KWIC_URL_KEYWORDS)
-			kwicUrlKeywords = kwicUrlKeywords.text
 
 			noiseWords = request.args.get(Constants.GET_ARG_NOISE_WORDS)
-			noiseWords = noiseWords.text
 
 			originalUrlKeywords = formatUploadUrlsKeywords(originalUrlKeywords)
 			kwicUrlKeywords = formatUploadUrlsKeywords(kwicUrlKeywords)
@@ -33,8 +30,7 @@ def databaseManagerRequest(requestType, request):
 
 		elif requestType == Constants.REQUEST_TYPE_QUERY:
 			keywords = request.args.get(Constants.GET_ARG_KEYWORDS)
-			keywords = keywords.text
-			
+
 			keywords = formatKeywordsQuery(keywords)
 
 			queryResults = firebaseController.getQueryResults(keywords)		

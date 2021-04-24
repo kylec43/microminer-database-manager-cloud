@@ -3,8 +3,7 @@ from firebase_admin import credentials, firestore
 import Constants
 
 class FirebaseController:
-	cred = credentials.Certificate('ServerAccountKey.json')
-	default_app = firebase_admin.initialize_app(cred)
+	default_app = firebase_admin.initialize_app()
 
 	def __init__(self):
 		pass
