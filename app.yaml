@@ -1,2 +1,2 @@
-service: kwic-webserver
+service: database-manager
 runtime: python37
